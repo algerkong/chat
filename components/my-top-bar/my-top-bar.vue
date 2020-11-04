@@ -1,21 +1,14 @@
 <template>
 	<view>
 		<view class="top-bar">
-			<view class="top-bar-left">
-				<slot name="left"></slot>
-			</view>
-			<view class="top-bar-center">
-				<slot name="center"></slot>
-			</view>
-			<view class="top-bar-right">
-				<slot name="right"></slot>
-			</view>
+			<slot name="left"></slot>
+			<slot name="center"></slot>
+			<slot name="right"></slot>
 		</view>
 	</view>
 </template>
 
 <script>
-	
 export default {
 	data() {
 		return {};
@@ -33,11 +26,11 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 $uni-spacing-row-lg;
+	padding: 0 $uni-spacing-col-base;
 
 	.top-bar-left {
-		display: flex;
-		align-items: center;
+		overflow: hidden;
+		position: relative;
 	}
 
 	.top-bar-center {

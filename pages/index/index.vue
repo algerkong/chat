@@ -1,13 +1,19 @@
 <template>
 	<view class="main">
-		<view class="top-bar">
-			<view class="top-bar-left" @click="leftClick"><image src="../../static/image/aa.jpg" mode=""></image></view>
-			<view class="top-bar-center"><image src="../../static/image/fair.png" mode=""></image></view>
-			<view class="top-bar-right">
-				<image class="search-icon" src="../../static/image/search.png" mode=""></image>
-				<image class="add-icon" src="../../static/image/add.png" mode=""></image>
-			</view>
-		</view>
+		<top-bar>
+			<template v-slot:left >
+				<view class="top-bar-left" @click="leftClick"><image src="../../static/image/aa.jpg" mode=""></image></view>
+			</template>
+			<template v-slot:center>
+				<view class="top-bar-center"><image src="../../static/image/fair.png" mode=""></image></view>
+			</template>
+			<template v-slot:right>
+				<view class="top-bar-right">
+					<image class="search-icon" @click="toSearch" src="../../static/image/search.png" mode=""></image>
+					<image class="add-icon" src="../../static/image/add.png" mode=""></image>
+				</view>
+			</template>
+		</top-bar>
 		<scroll-view scroll-y="true" class="scroll">
 			<view class="friends">
 				<view class="friend-list" v-for="(item, index) in friends" :key="item.id">
@@ -25,26 +31,34 @@
 				</view>
 			</view>
 		</scroll-view>
-		
 	</view>
 </template>
 
 <script>
 import datas from '../../commons/js/datas.js';
 import myfun from '../../commons/js/myfun.js';
+import TopBar from '../../components/my-top-bar/my-top-bar.vue';
 export default {
 	data() {
 		return {
 			friends: []
 		};
 	},
+	components: {
+		TopBar
+	},
 	onLoad() {
 		this.getFriends();
 	},
 	methods: {
-		leftClick(){
+		leftClick() {
 			uni.navigateTo({
-			    url: '../login/login'
+				url: '../login/login'
+			});
+		},
+		toSearch() {
+			uni.navigateTo({
+				url: '../search/search'
 			});
 		},
 		changeTime(date) {
@@ -58,63 +72,61 @@ export default {
 </script>
 
 <style lang="scss">
-	.main{
-		padding-top: var(--status-bar-height); 
-		padding-bottom: $uni-spacing-col-base;
+.main {
+	padding-top: var(--status-bar-height);
+	padding-bottom: $uni-spacing-col-base;
+}
+
+.scroll {
+	height: calc(100vh - 98rpx);
+}
+// height: 98rpx;
+// background-color: $uni-bg-color;
+// display: flex;
+// justify-content: space-between;
+// align-items: center;
+// padding: 0 $uni-spacing-col-base;
+// box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+
+.top-bar-left {
+	flex: 1;
+
+	image {
+		width: 68rpx;
+		height: 68rpx;
+		border-radius: 16rpx;
+		box-sizing: border-box;
+		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+		background-color: $uni-bg-color-grey;
 	}
-	
-	.scroll{
-		height: calc(100vh - 98rpx);
-	}
-.top-bar {
-	height: 98rpx;
-	background-color: $uni-bg-color;
+}
+
+.top-bar-center {
+	flex: 2;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+
+	image {
+		width: 88rpx;
+		height: 42rpx;
+	}
+}
+
+.top-bar-right {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
-	padding: 0 $uni-spacing-col-base;
-	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 
-	.top-bar-left {
-		flex: 1;
-
-		image {
-			width: 68rpx;
-			height: 68rpx;
-			border-radius: 16rpx;
-			box-sizing: border-box;
-			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-			background-color: $uni-bg-color-grey;
-		}
+	.search-icon {
+		width: 52rpx;
+		height: 52rpx;
+		margin-right: 40rpx;
 	}
 
-	.top-bar-center {
-		flex: 2;
-		display: flex;
-		justify-content: center;
-
-		image {
-			width: 88rpx;
-			height: 42rpx;
-		}
-	}
-
-	.top-bar-right {
-		flex: 1;
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-
-		.search-icon {
-			width: 52rpx;
-			height: 52rpx;
-			margin-right: 40rpx;
-		}
-
-		.add-icon {
-			width: 48rpx;
-			height: 48rpx;
-		}
+	.add-icon {
+		width: 48rpx;
+		height: 48rpx;
 	}
 }
 
@@ -126,8 +138,8 @@ export default {
 		justify-content: space-between;
 		height: 128rpx;
 		align-items: center;
-		
-		&:active{
+
+		&:active {
 			background-color: $uni-bg-color-grey;
 		}
 

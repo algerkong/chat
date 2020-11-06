@@ -3,7 +3,7 @@ export default{
 		let friendarr=[
 			{
 				id:1,
-				imgUrl:'a(1).jpg',
+				imgUrl:'a1.jpg',
 				tip:2,
 				name:'张三',
 				email:'liuliu@fox.com',
@@ -12,7 +12,7 @@ export default{
 			},
 			{
 				id:2,
-				imgUrl:'a(2).jpg',
+				imgUrl:'a2.jpg',
 				tip:5,
 				name:'李四',
 				email:'liuliu@fox.com',
@@ -21,7 +21,7 @@ export default{
 			},
 			{
 				id:3,
-				imgUrl:'a(3).jpg',
+				imgUrl:'a3.jpg',
 				tip:66,
 				name:'王五',
 				email:'liuliu@fox.com',
@@ -30,7 +30,7 @@ export default{
 			},
 			{
 				id:4,
-				imgUrl:'a(4).jpg',
+				imgUrl:'a4.jpg',
 				tip:33,
 				name:'赵六',
 				email:'liuliu@fox.com',
@@ -39,7 +39,7 @@ export default{
 			},
 			{
 				id:5,
-				imgUrl:'a(5).jpg',
+				imgUrl:'a5.jpg',
 				tip:2,
 				name:'杨家兴',
 				email:'liuliu@fox.com',
@@ -48,7 +48,7 @@ export default{
 			},
 			{
 				id:6,
-				imgUrl:'a(6).jpg',
+				imgUrl:'a6.jpg',
 				tip:5,
 				name:'刘俊杰',
 				email:'liuliu@fox.com',
@@ -57,7 +57,7 @@ export default{
 			},
 			{
 				id:7,
-				imgUrl:'a(7).jpg',
+				imgUrl:'a7.jpg',
 				tip:66,
 				name:'仇迪',
 				email:'liuliu@fox.com',
@@ -66,7 +66,7 @@ export default{
 			},
 			{
 				id:8,
-				imgUrl:'a(8).jpg',
+				imgUrl:'a8.jpg',
 				tip:33,
 				name:'齐云飞',
 				email:'liuliu@fox.com',

@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "top-bar": "/components/my-top-bar/my-top-bar",
+    "search-item": "/components/my-search-item/my-search-item"
+  }
+}

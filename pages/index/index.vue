@@ -2,7 +2,7 @@
 	<view class="main">
 		<top-bar>
 			<template v-slot:left >
-				<view class="top-bar-left" @click="leftClick"><image src="../../static/image/aa.jpg" mode=""></image></view>
+				<view class="top-bar-left" @click="leftClick"><image src="../../static/image/head/a6.jpg" mode=""></image></view>
 			</template>
 			<template v-slot:center>
 				<view class="top-bar-center"><image src="../../static/image/fair.png" mode=""></image></view>
@@ -10,7 +10,7 @@
 			<template v-slot:right>
 				<view class="top-bar-right">
 					<image class="search-icon" @click="toSearch" src="../../static/image/search.png" mode=""></image>
-					<image class="add-icon" src="../../static/image/add.png" mode=""></image>
+					<image class="add-icon" @click="toUser" src="../../static/image/add.png" mode=""></image>
 				</view>
 			</template>
 		</top-bar>
@@ -19,7 +19,20 @@
 				<view class="friend-list" v-for="(item, index) in friends" :key="item.id">
 					<view class="friend-headimg">
 						<text class="news-number">{{ item.tip }}</text>
-						<image src="../../static/image/yyy.jpg"></image>
+						<image :src="'../../static/image/head/' + item.imgUrl"></image>
+					</view>
+					<view class="friend-text">
+						<text class="name">{{ item.name }}</text>
+						<view class="content">{{ item.news }}</view>
+					</view>
+					<view class="friend-time">
+						<text>{{ changeTime(item.time) }}</text>
+					</view>
+				</view>
+				<view class="friend-list" v-for="(item, index) in friends" :key="index*5">
+					<view class="friend-headimg">
+						<text class="news-number">{{ item.tip }}</text>
+						<image :src="'../../static/image/head/' + item.imgUrl"></image>
 					</view>
 					<view class="friend-text">
 						<text class="name">{{ item.name }}</text>
@@ -61,6 +74,11 @@ export default {
 				url: '../search/search'
 			});
 		},
+		toUser(){
+			uni.navigateTo({
+				url: '../userhome/userhome'
+			});
+		},
 		changeTime(date) {
 			return myfun.dateTime(date);
 		},
@@ -73,12 +91,12 @@ export default {
 
 <style lang="scss">
 .main {
-	padding-top: var(--status-bar-height);
+	margin-top: var(--status-bar-height);
 	padding-bottom: $uni-spacing-col-base;
 }
 
 .scroll {
-	height: calc(100vh - 98rpx);
+	height: calc(100vh - 118rpx);
 }
 // height: 98rpx;
 // background-color: $uni-bg-color;
@@ -131,7 +149,7 @@ export default {
 }
 
 .friends {
-	padding: 16rpx 0 0;
+	padding: 16rpx 0 100rpx;
 	.friend-list {
 		padding: 0 $uni-spacing-col-base;
 		display: flex;

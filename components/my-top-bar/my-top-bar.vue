@@ -22,24 +22,12 @@ export default {
 	width: 100vw;
 	box-sizing: border-box;
 	height: 98rpx;
-	background-color: $uni-bg-color;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 $uni-spacing-col-base;
-
-	.top-bar-left {
-		overflow: hidden;
-		position: relative;
-	}
-
-	.top-bar-center {
-		flex: 1;
-	}
-
-	.top-bar-right {
-		display: flex;
-		align-items: center;
-	}
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+	position: relative;
+	z-index: 999;
 }
 </style>

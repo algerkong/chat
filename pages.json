@@ -1,4 +1,5 @@
 {
+	
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
@@ -45,7 +46,7 @@
 
 	}],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
+		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#007AFF",
 		"backgroundColor": "#FFFFFF"

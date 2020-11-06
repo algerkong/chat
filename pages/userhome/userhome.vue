@@ -166,7 +166,7 @@ export default {
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-		height: calc(100vh - 98rpx);
+		height: calc(100vh - 98rpx - var(--status-bar-height));
 		.user-header {
 			display: flex;
 			justify-content: center;

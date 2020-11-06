@@ -49,8 +49,6 @@ export default {
 
 <style lang="scss">
 .main {
-	padding-top: var(--status-bar-height);
-	padding-bottom: $uni-spacing-col-base;
 	.icon-close {
 		width: 60rpx;
 		height: 60rpx;

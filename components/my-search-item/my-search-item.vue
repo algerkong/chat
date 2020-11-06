@@ -1,7 +1,9 @@
 <template>
 	<view>
 		<view class="list-item">
-			<image class="img" :src="'../../static/image/head/' + item.imgUrl" mode=""></image>
+			<navigator url="../../pages/userhome/userhome">
+				<image class="img" :src="'../../static/image/head/' + item.imgUrl" mode=""></image>
+			</navigator>
 			<view class="names">
 				<view class="name" v-html="item.name"></view>
 				<view class="email" v-html="item.email"></view>

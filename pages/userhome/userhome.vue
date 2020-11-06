@@ -24,14 +24,11 @@
 				<view class="nike">昵称: {{ user.nike }}</view>
 				<view class="intr">{{ user.intr }}</view>
 			</view>
-			<view class="user-add">
-				<view class="user-button" @click="addFriendAnimate">加为好友</view>
-			</view>
+			<view class="user-add"><view class="user-button" @click="addFriendAnimate">加为好友</view></view>
 		</view>
 		<view class="add-msg" :style="{ height: addHeight + 'px', bottom: -addHeight + 'px' }" :animation="animationAdd">
 			<view class="name">{{ user.name }}</view>
 			<textarea class="add-main" :value="myname + ' 请求添加为好友~'" placeholder="" maxlength="300" />
-
 			<view class="add-btn" :animation="animationBtn">
 				<view class="btn-cancel" @click="addFriendAnimate">取消</view>
 				<view class="btn-send">发送</view>
@@ -108,15 +105,29 @@ export default {
 			if (this.isAdd) {
 				animationAddUp.bottom(0).step();
 				animationBtnUp.bottom(0).step();
-				animationImgSmall.width(120).height(120).translate(-100,20).step();
-				animationSexOpcity.opacity(0).translate(-100,20).step();
-				animationBgYellow.backgroundColor('rgba(255,228,49,0.60)').step()
+				animationImgSmall
+					.width(120)
+					.height(120)
+					.translate(-100, 20)
+					.step();
+				animationSexOpcity
+					.opacity(0)
+					.translate(-100, 20)
+					.step();
+				animationBgYellow.backgroundColor('rgba(255,228,49,0.60)').step();
 			} else {
 				animationAddUp.bottom(-this.addHeight).step();
 				animationBtnUp.bottom(-100).step();
-				animationImgSmall.width(200).height(200).translate(0,0).step();
-				animationSexOpcity.opacity(1).translate(0,0).step();
-				animationBgYellow.backgroundColor('rgba(255,255,255,0.30)').step()
+				animationImgSmall
+					.width(200)
+					.height(200)
+					.translate(0, 0)
+					.step();
+				animationSexOpcity
+					.opacity(1)
+					.translate(0, 0)
+					.step();
+				animationBgYellow.backgroundColor('rgba(255,255,255,0.30)').step();
 			}
 			this.animationAdd = animationAddUp.export();
 			this.animationBtn = animationBtnUp.export();
@@ -145,14 +156,14 @@ export default {
 		top: 0;
 		left: 0;
 		z-index: -1;
-		.bg-top{
+		.bg-top {
 			position: absolute;
 			width: 100vw;
 			height: 100vh;
 			top: 0;
 			left: 0;
 			z-index: 1;
-			background-color: rgba(255,255,255,0.3);
+			background-color: rgba(255, 255, 255, 0.3);
 		}
 		.bg-img {
 			position: absolute;
@@ -180,7 +191,7 @@ export default {
 					height: 20vh;
 					border: 6rpx solid #ffffff;
 					border-radius: $uni-border-radius-lg;
-					box-shadow: 0 18rpx 20rpx 0 rgba(39,40,50,0.10);
+					box-shadow: 0 18rpx 20rpx 0 rgba(39, 40, 50, 0.1);
 				}
 				.sex-icon {
 					position: absolute;
@@ -220,7 +231,7 @@ export default {
 			}
 		}
 
-		.user-add{
+		.user-add {
 			width: 100vw;
 			padding: $uni-spacing-col-lg;
 			box-sizing: border-box;
@@ -238,7 +249,6 @@ export default {
 				}
 			}
 		}
-		
 	}
 	.add-msg {
 		position: fixed;

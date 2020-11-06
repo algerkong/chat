@@ -1,9 +1,7 @@
 <template>
 	<view>
 		<view class="list-item">
-			<navigator url="../../pages/userhome/userhome">
-				<image class="img" :src="'../../static/image/head/' + item.imgUrl" mode=""></image>
-			</navigator>
+				<image @click="toUser" class="img" :src="'../../static/image/head/' + item.imgUrl" mode=""></image>
 			<view class="names">
 				<view class="name" v-html="item.name"></view>
 				<view class="email" v-html="item.email"></view>
@@ -35,7 +33,15 @@ export default {
 				return false
 			}
 		}
+	},
+	methods:{
+		toUser(){
+			uni.navigateTo({
+				url:'../../pages/userhome/userhome'
+			})
+		}
 	}
+	
 }
 </script>
 

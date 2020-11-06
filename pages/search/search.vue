@@ -90,7 +90,7 @@ export default {
 		overflow: hidden;
 		position: relative;
 		.search-input {
-			min-width: 600rpx;
+			min-width: 560rpx;
 			width: 100%;
 			height: 60rpx;
 			background-color: $uni-bg-color-grey;
@@ -112,6 +112,7 @@ export default {
 
 	.list {
 		.title {
+			font-size: $uni-font-size-lg;
 			padding:  $uni-spacing-col-base;
 			font-size: 44rpx;
 		}

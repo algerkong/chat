@@ -1,5 +1,5 @@
 {
-	
+
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
@@ -37,6 +37,15 @@
 
 	}, {
 		"path": "pages/userhome/userhome",
+		"style": {
+			"navigationStyle": "custom",
+			"app-plus": {
+				"titleNView": false
+			}
+		}
+
+	}, {
+		"path": "pages/userdetails/userdetails",
 		"style": {
 			"navigationStyle": "custom",
 			"app-plus": {

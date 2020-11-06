@@ -38,5 +38,9 @@ export default {
 		left: 0;
 		z-index: 9999;
 	}
+	>view{
+		display: flex;
+		align-items: center;
+	}
 }
 </style>

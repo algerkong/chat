@@ -5,7 +5,9 @@
 				<view class="top-bar-left" @click="leftClick"><image src="../../static/image/head/a6.jpg" mode=""></image></view>
 			</template>
 			<template v-slot:center>
+				<!-- #ifndef MP-WEIXIN -->
 				<view class="top-bar-center"><image src="../../static/image/fair.png" mode=""></image></view>
+				<!-- #endif -->
 			</template>
 			<template v-slot:right>
 				<view class="top-bar-right">
@@ -14,54 +16,62 @@
 				</view>
 			</template>
 		</top-bar>
-		<scroll-view scroll-y="true" class="scroll">
-			<view class="friends">
-				<view class="friend-list" v-for="(item, index) in friends" :key="item.id">
-					<view class="friend-headimg">
-						<text class="news-number">{{ item.tip }}</text>
-						<image :src="'../../static/image/head/' + item.imgUrl"></image>
+		<view class="content">
+			<scroll-view scroll-y="true" class="scroll">
+				<view class="friends">
+					<view @click="toFriendquest">
+						<new-message :item="addItem" ></new-message>
 					</view>
-					<view class="friend-text">
-						<text class="name">{{ item.name }}</text>
-						<view class="content">{{ item.news }}</view>
+					<view @click="toCreateGroup">
+						<new-message :item="addGroup" ></new-message>
 					</view>
-					<view class="friend-time">
-						<text>{{ changeTime(item.time) }}</text>
-					</view>
+				<view v-for="(item, index) in friends" :key="item.id" @click="toChat">
+					<new-message  :item="item" ></new-message>
 				</view>
-				<view class="friend-list" v-for="(item, index) in friends" :key="index * 5">
-					<view class="friend-headimg">
-						<text class="news-number">{{ item.tip }}</text>
-						<image :src="'../../static/image/head/' + item.imgUrl"></image>
-					</view>
-					<view class="friend-text">
-						<text class="name">{{ item.name }}</text>
-						<view class="content">{{ item.news }}</view>
-					</view>
-					<view class="friend-time">
-						<text>{{ changeTime(item.time) }}</text>
-					</view>
+				<view v-for="(item, index) in friends" :key="item.id" @click="toChat">
+					<new-message  :item="item" ></new-message>
 				</view>
-			</view>
-		</scroll-view>
+				</view>
+			</scroll-view>
+		</view>
 	</view>
 </template>
 
 <script>
 import datas from '../../commons/js/datas.js';
-import myfun from '../../commons/js/myfun.js';
 import TopBar from '../../components/my-top-bar/my-top-bar.vue';
+import NewMessage from '../../components/my-new-message/my-new-message.vue'
 export default {
 	data() {
 		return {
-			friends: []
+			friends: [],
+			height: '',
+			navigationBarStyle: {
+				iconText: '首页'
+			},
+			addItem:{
+				imgUrl:'addfriend.png',
+				tip:2,
+				name:'好友请求',
+				time:new Date(),
+				news:''
+			},
+			addGroup:{
+				imgUrl:'group.png',
+				tip:'',
+				name:'添加群组',
+				time:new Date(),
+				news:''
+			}
 		};
 	},
 	components: {
-		TopBar
+		TopBar,
+		NewMessage
 	},
 	onLoad() {
 		this.getFriends();
+		this.height = this.topHeight;
 	},
 	methods: {
 		leftClick() {
@@ -79,11 +89,23 @@ export default {
 				url: '../userhome/userhome'
 			});
 		},
-		changeTime(date) {
-			return myfun.dateTime(date);
-		},
 		getFriends() {
 			this.friends = datas.friends();
+		},
+		toFriendquest(){
+			uni.navigateTo({
+				url: '../friendquest/friendquest'
+			});
+		},
+		toChat(){
+			uni.navigateTo({
+				url: '../chatroom/chatroom'
+			});
+		},
+		toCreateGroup(){
+			uni.navigateTo({
+				url: '../creategroup/creategroup'
+			});
 		}
 	}
 };
@@ -91,10 +113,18 @@ export default {
 
 <style lang="scss">
 .main {
-}
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 
-.scroll {
-	height: calc(100vh - 98rpx - var(--status-bar-height));
+	.content {
+		flex: 1;
+		height: 100rpx;
+		.scroll {
+			height: 100%;
+		}
+	}
 }
 
 // height: 98rpx;
@@ -110,9 +140,9 @@ export default {
 	display: flex;
 	align-items: center;
 	image {
-		width: 68rpx;
-		height: 68rpx;
-		border-radius: 16rpx;
+		width: 58rpx;
+		height: 58rpx;
+		border-radius: $uni-border-radius-base;
 		box-sizing: border-box;
 		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 		background-color: $uni-bg-color-grey;
@@ -135,7 +165,6 @@ export default {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-
 	.search-icon {
 		width: 52rpx;
 		height: 52rpx;
@@ -150,72 +179,5 @@ export default {
 
 .friends {
 	padding: 16rpx 0;
-
-	.friend-list {
-		padding: 0 $uni-spacing-col-base;
-		display: flex;
-		justify-content: space-between;
-		height: 128rpx;
-		align-items: center;
-
-		&:active {
-			background-color: $uni-bg-color-grey;
-		}
-
-		.friend-headimg {
-			position: relative;
-			width: $uni-img-size-base;
-			height: $uni-img-size-base;
-
-			> image {
-				width: $uni-img-size-base;
-				height: $uni-img-size-base;
-				border-radius: $uni-border-radius-base;
-				background-color: $uni-bg-color-grey;
-			}
-
-			> .news-number {
-				position: absolute;
-				right: 0;
-				top: 0;
-				margin: -12rpx -12rpx;
-				z-index: 10;
-				min-width: 36rpx;
-				height: 36rpx;
-				text-align: center;
-				font-size: $uni-font-size-sm;
-				border-radius: $uni-border-radius-base;
-				background-color: $uni-color-warning;
-				color: $uni-text-color-inverse;
-			}
-		}
-
-		.friend-text {
-			display: flex;
-			flex-direction: column;
-			flex: 1;
-			padding: 0 $uni-spacing-col-base;
-
-			.name {
-				font-size: $uni-font-size-lg;
-				color: $uni-text-color;
-				line-height: 50rpx;
-			}
-
-			.content {
-				max-width: 400rpx;
-				font-size: $uni-font-size-base;
-				color: $uni-text-color-grey;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-			}
-		}
-
-		.friend-time {
-			color: $uni-text-color-disable;
-			font-size: $uni-font-size-sm;
-		}
-	}
 }
 </style>

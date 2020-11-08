@@ -3,7 +3,6 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationStyle": "custom",
 			"app-plus": {
 				"titleNView": false
 			}
@@ -11,7 +10,6 @@
 	}, {
 		"path": "pages/login/login",
 		"style": {
-			"navigationStyle": "custom",
 			"app-plus": {
 				"titleNView": false
 			}
@@ -20,7 +18,6 @@
 	}, {
 		"path": "pages/registered/registered",
 		"style": {
-			"navigationStyle": "custom",
 			"app-plus": {
 				"titleNView": false
 			}
@@ -29,7 +26,6 @@
 	}, {
 		"path": "pages/search/search",
 		"style": {
-			"navigationStyle": "custom",
 			"app-plus": {
 				"titleNView": false
 			}
@@ -38,7 +34,6 @@
 	}, {
 		"path": "pages/userhome/userhome",
 		"style": {
-			"navigationStyle": "custom",
 			"app-plus": {
 				"titleNView": false
 			}
@@ -47,14 +42,41 @@
 	}, {
 		"path": "pages/userdetails/userdetails",
 		"style": {
-			"navigationStyle": "custom",
 			"app-plus": {
 				"titleNView": false
 			}
 		}
 
-	}],
+	}    ,{
+            "path" : "pages/friendquest/friendquest",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/chatroom/chatroom",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/creategroup/creategroup",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
+		"navigationStyle": "custom",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#007AFF",

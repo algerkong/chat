@@ -25,23 +25,45 @@
 /* 透明度 */
 /* 文章场景相关 */
 .main {
-  margin-top: 25px;
-  padding-bottom: 32rpx;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
 }
-.scroll {
-  height: calc(100vh - 118rpx);
+.main .content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  height: 100rpx;
+}
+.main .content .scroll {
+  height: 100%;
 }
 .top-bar-left {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 .top-bar-left image {
-  width: 68rpx;
-  height: 68rpx;
-  border-radius: 16rpx;
-  box-sizing: border-box;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  width: 58rpx;
+  height: 58rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   background-color: #f3f4f6;
 }
 .top-bar-center {
@@ -83,77 +105,6 @@
   height: 48rpx;
 }
 .friends {
-  padding: 16rpx 0 100rpx;
-}
-.friends .friend-list {
-  padding: 0 32rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  height: 128rpx;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-}
-.friends .friend-list:active {
-  background-color: #f3f4f6;
-}
-.friends .friend-list .friend-headimg {
-  position: relative;
-  width: 96rpx;
-  height: 96rpx;
-}
-.friends .friend-list .friend-headimg > image {
-  width: 96rpx;
-  height: 96rpx;
-  border-radius: 20rpx;
-  background-color: #f3f4f6;
-}
-.friends .friend-list .friend-headimg > .news-number {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: -12rpx -12rpx;
-  z-index: 10;
-  min-width: 36rpx;
-  height: 36rpx;
-  text-align: center;
-  font-size: 24rpx;
-  border-radius: 20rpx;
-  background-color: #ff5d5b;
-  color: #fff;
-}
-.friends .friend-list .friend-text {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  padding: 0 32rpx;
-}
-.friends .friend-list .friend-text .name {
-  font-size: 32rpx;
-  color: #272832;
-  line-height: 50rpx;
-}
-.friends .friend-list .friend-text .content {
-  max-width: 400rpx;
-  font-size: 28rpx;
-  color: rgba(39, 40, 50, 0.6);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.friends .friend-list .friend-time {
-  color: rgba(39, 40, 50, 0.4);
-  font-size: 24rpx;
+  padding: 16rpx 0;
 }
 

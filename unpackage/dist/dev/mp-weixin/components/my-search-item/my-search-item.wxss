@@ -39,7 +39,8 @@
 .list-item .img {
   width: 80rpx;
   height: 80rpx;
-  border-radius: 20rpx;
+  -webkit-border-radius: 20rpx;
+          border-radius: 20rpx;
 }
 .list-item .names {
   -webkit-box-flex: 1;
@@ -64,7 +65,8 @@
 .list-item .btn {
   width: 120rpx;
   height: 48rpx;
-  border-radius: 24rpx;
+  -webkit-border-radius: 24rpx;
+          border-radius: 24rpx;
   text-align: center;
   line-height: 48rpx;
 }

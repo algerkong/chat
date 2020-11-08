@@ -24,10 +24,16 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.top-bar {
+.top-bar-page {
   width: 100vw;
-  box-sizing: border-box;
-  height: 98rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 32rpx;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.top-bar {
+  height: 88rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -37,9 +43,25 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  padding: 0 32rpx;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 999;
+}
+.top-bar > view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.top-bar > view:nth-child(3) {
+  padding-right: 180rpx;
+}
+.top-bar .top-bar-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 

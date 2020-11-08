@@ -24,10 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.main {
-  padding-top: 25px;
-  padding-bottom: 32rpx;
-}
 .main .icon-close {
   width: 60rpx;
   height: 60rpx;
@@ -80,8 +76,10 @@
   height: 96rpx;
   line-height: 96rpx;
   background-color: #ffe431;
-  box-shadow: 0 50rpx 32rpx -36rpx rgba(255, 228, 49, 0.4);
-  border-radius: 48rpx;
+  -webkit-box-shadow: 0 50rpx 32rpx -36rpx rgba(255, 228, 49, 0.4);
+          box-shadow: 0 50rpx 32rpx -36rpx rgba(255, 228, 49, 0.4);
+  -webkit-border-radius: 48rpx;
+          border-radius: 48rpx;
   margin-top: 100rpx;
   font-size: 32rpx;
   color: #272832;

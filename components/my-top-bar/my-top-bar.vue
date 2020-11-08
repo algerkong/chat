@@ -1,9 +1,8 @@
 <template>
-	<view>
-		<view class="top-bar">
-			<view class="status-bar"></view>
+	<view class="top-bar-page" :style="{ 'padding-top': statusBarHeight + 'px' }">
+		<view class="top-bar" >
 			<slot name="left"></slot>
-			<slot name="center"></slot>
+			<view class="top-bar-center"><slot name="center"></slot></view>
 			<slot name="right"></slot>
 		</view>
 	</view>
@@ -12,35 +11,45 @@
 <script>
 export default {
 	data() {
-		return {};
+		return {
+			statusBarHeight: ''
+		};
+	},
+	created() {
+		this.statusBarHeight = this.topHeight;
 	},
 	methods: {}
 };
 </script>
 
 <style lang="scss">
-.top-bar {
+.top-bar-page {
 	width: 100vw;
 	box-sizing: border-box;
-	height: calc(var(--status-bar-height) + 98rpx);
+	padding: 0 $uni-spacing-col-base;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.top-bar {
+	height: 88rpx;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: var(--status-bar-height) $uni-spacing-col-base 0;
-	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
 	position: relative;
 	z-index: 999;
-	.status-bar{
-		width: 100vw;
-		height: var(--status-bar-height);
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 9999;
-	}
-	>view{
+	> view {
 		display: flex;
 		align-items: center;
+	}
+	/* #ifdef MP-WEIXIN */
+	& > view:nth-child(3) {
+		padding-right: 180rpx;
+	}
+	/* #endif */
+	.top-bar-center {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 </style>

@@ -4,11 +4,16 @@
     "pages/login/login",
     "pages/registered/registered",
     "pages/search/search",
-    "pages/userhome/userhome"
+    "pages/userhome/userhome",
+    "pages/userdetails/userdetails",
+    "pages/friendquest/friendquest",
+    "pages/chatroom/chatroom",
+    "pages/creategroup/creategroup"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#007AFF",
     "backgroundColor": "#FFFFFF"

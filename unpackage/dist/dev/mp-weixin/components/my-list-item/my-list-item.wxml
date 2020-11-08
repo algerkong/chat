@@ -1,0 +1,1 @@
+<view class="item"><view class="item-left">{{''+item.left+''}}</view><view class="item-center"><block wx:if="{{!item.center}}"><image src="{{item.img}}" mode></image></block><block wx:else><text>{{item.center}}</text></block></view><view class="item-right"><image src="../../static/image/toright.png"></image></view></view>

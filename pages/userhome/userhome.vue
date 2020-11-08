@@ -76,7 +76,7 @@ export default {
 				.select('.bg')
 				.boundingClientRect(data => {
 					console.log(data.height);
-					this.addHeight = data.height - 186;
+					this.addHeight = data.height - 176;
 				})
 				.exec();
 		},
@@ -108,11 +108,11 @@ export default {
 				animationImgSmall
 					.width(120)
 					.height(120)
-					.translate(-100, 20)
+					.translate(-100, -20)
 					.step();
 				animationSexOpcity
 					.opacity(0)
-					.translate(-100, 20)
+					.translate(-100, -20)
 					.step();
 				animationBgYellow.backgroundColor('rgba(255,228,49,0.60)').step();
 			} else {
@@ -173,11 +173,7 @@ export default {
 		}
 	}
 	.content {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		height: calc(100vh - 98rpx - var(--status-bar-height));
+
 		.user-header {
 			display: flex;
 			justify-content: center;
@@ -208,7 +204,6 @@ export default {
 			}
 		}
 		.user-detail {
-			flex: 1;
 			padding: $uni-spacing-col-base 100rpx;
 			text-align: center;
 			color: $uni-text-color;
@@ -235,6 +230,9 @@ export default {
 			width: 100vw;
 			padding: $uni-spacing-col-lg;
 			box-sizing: border-box;
+			position: fixed;
+			bottom: 0;
+			left: 0;
 			.user-button {
 				font-size: $uni-font-size-lg;
 				color: $uni-text-color;

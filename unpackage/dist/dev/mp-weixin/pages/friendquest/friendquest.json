@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "top-bar": "/components/my-top-bar/my-top-bar",
+    "add-friendquest": "/components/my-add-friendquest/my-add-friendquest"
+  }
+}

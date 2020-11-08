@@ -36,13 +36,15 @@
   position: relative;
 }
 .main .top-bar-left .search-input {
-  min-width: 600rpx;
   width: 100%;
+  min-width: 400rpx;
   height: 60rpx;
   background-color: #f3f4f6;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0 60rpx 0 20rpx;
-  border-radius: 10rpx;
+  -webkit-border-radius: 10rpx;
+          border-radius: 10rpx;
 }
 .main .top-bar-left .search-icon {
   width: 40rpx;
@@ -55,6 +57,7 @@
   padding-left: 32rpx;
 }
 .main .list .title {
+  font-size: 32rpx;
   padding: 32rpx;
   font-size: 44rpx;
 }

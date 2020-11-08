@@ -4,6 +4,9 @@
 			<template v-slot:left>
 				<image @click="back" class="icon-close" src="../../static/image/close.png" mode=""></image>
 			</template>
+			<template v-slot:center>
+				<view></view>
+			</template>
 			<template v-slot:right >
 				<text class="registered" @click="toRegistered">注册</text>
 			</template>

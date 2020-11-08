@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/my-top-bar/my-top-bar":1,"components/my-search-item/my-search-item":1};
+/******/ 		var cssChunks = {"components/my-new-message/my-new-message":1,"components/my-top-bar/my-top-bar":1,"components/my-search-item/my-search-item":1,"components/my-list-item/my-list-item":1,"components/my-add-friendquest/my-add-friendquest":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/my-top-bar/my-top-bar":"components/my-top-bar/my-top-bar","components/my-search-item/my-search-item":"components/my-search-item/my-search-item"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/my-new-message/my-new-message":"components/my-new-message/my-new-message","components/my-top-bar/my-top-bar":"components/my-top-bar/my-top-bar","components/my-search-item/my-search-item":"components/my-search-item/my-search-item","components/my-list-item/my-list-item":"components/my-list-item/my-list-item","components/my-add-friendquest/my-add-friendquest":"components/my-add-friendquest/my-add-friendquest"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

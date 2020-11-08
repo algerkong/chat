@@ -1,1 +1,1 @@
-<view><view class="top-bar"><slot name="left"></slot><slot name="center"></slot><slot name="right"></slot></view></view>
+<view class="top-bar-page" style="{{'padding-top:'+(statusBarHeight+'px')+';'}}"><view class="top-bar"><slot name="left"></slot><view class="top-bar-center"><slot name="center"></slot></view><slot name="right"></slot></view></view>

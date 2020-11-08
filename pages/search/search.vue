@@ -7,6 +7,9 @@
 					<image class="search-icon" src="../../static/image/search.png" mode=""></image>
 				</view>
 			</template>
+			<template v-slot:center>
+				<view></view>
+			</template>
 			<template v-slot:right>
 				<text class="top-bar-cancel" @click="back">取消</text>
 			</template>
@@ -19,7 +22,10 @@
 		
 		<view class="list" v-else>
 			<view class="title">推荐好友</view>
-			<search-item v-for="item in recommendedList" :item="item"></search-item>
+			<view v-for="item in recommendedList" v-if="!isFriend(item.id)" :key="item.id">
+				<search-item  :item="item"></search-item>
+			</view>
+			
 		</view>
 		
 	</view>
@@ -90,8 +96,8 @@ export default {
 		overflow: hidden;
 		position: relative;
 		.search-input {
-			min-width: 560rpx;
 			width: 100%;
+			min-width: 400rpx;
 			height: 60rpx;
 			background-color: $uni-bg-color-grey;
 			box-sizing: border-box;

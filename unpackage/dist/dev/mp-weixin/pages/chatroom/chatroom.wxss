@@ -139,6 +139,8 @@
   -webkit-align-items: center;
           align-items: center;
   font-size: 32rpx;
+  -webkit-box-shadow: 0 -1rpx 8rpx 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -1rpx 8rpx 0 rgba(0, 0, 0, 0.1);
 }
 .main .send-msg input {
   -webkit-box-flex: 1;

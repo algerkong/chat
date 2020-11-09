@@ -27,7 +27,7 @@ export default {
 	width: 100vw;
 	box-sizing: border-box;
 	padding: 0 $uni-spacing-col-base;
-	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1rpx 6rpx 0 rgba(0, 0, 0, 0.05);
 }
 .top-bar {
 	height: 88rpx;

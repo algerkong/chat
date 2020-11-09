@@ -245,6 +245,7 @@ export default {
 		display: flex;
 		align-items: center;
 		font-size: $uni-font-size-lg;
+		box-shadow: 0 -1rpx 8rpx 0 rgba(0,0,0,0.1);
 		input {
 			flex: 1;
 			background-color: $uni-bg-color-grey;

@@ -74,6 +74,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/groupdetail/groupdetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom",

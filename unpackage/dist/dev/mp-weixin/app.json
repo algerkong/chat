@@ -8,7 +8,8 @@
     "pages/userdetails/userdetails",
     "pages/friendquest/friendquest",
     "pages/chatroom/chatroom",
-    "pages/creategroup/creategroup"
+    "pages/creategroup/creategroup",
+    "pages/groupdetail/groupdetail"
   ],
   "subPackages": [],
   "window": {

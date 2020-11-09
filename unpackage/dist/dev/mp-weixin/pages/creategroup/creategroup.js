@@ -184,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _datas = _interopRequireDefault(__webpack_require__(/*! ../../commons/js/datas.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var TopBar = function TopBar() {__webpack_require__.e(/*! require.ensure | components/my-top-bar/my-top-bar */ "components/my-top-bar/my-top-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/my-top-bar/my-top-bar.vue */ 85));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _datas = _interopRequireDefault(__webpack_require__(/*! ../../commons/js/datas.js */ 17));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var TopBar = function TopBar() {__webpack_require__.e(/*! require.ensure | components/my-top-bar/my-top-bar */ "components/my-top-bar/my-top-bar").then((function () {return resolve(__webpack_require__(/*! ../../components/my-top-bar/my-top-bar.vue */ 93));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   data: function data() {
     return {
